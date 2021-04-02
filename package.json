@@ -1,6 +1,6 @@
 {
-  "homepage": "https://<name>.github.io/react_app",
-  "name": "my-app",
+  "homepage": "https://Layrovell.github.io/reduxbook",
+  "name": "reduxbook",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

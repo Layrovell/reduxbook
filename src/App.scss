@@ -64,14 +64,12 @@ $accentColor: #8254ff;
 }
 
 .form__add {
-  outline: 1px dashed $accentColor;
   margin: 10px;
   padding: 10px;
   width: 300px;
 }
 
 .form__edit {
-  outline: 1px dashed $accentColor;
   margin: 10px;
   padding: 10px;
   width: 300px;
@@ -92,7 +90,6 @@ input {
 }
 
 .book {
-  outline: 1px dashed $accentColor;
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -100,8 +97,33 @@ input {
   padding: 10px;
 
   &__item {
-    margin: 5px 0;
-    padding: 5px 0;
-    font-size: 16px;
+    padding: 6px 0 6px 40px;
+    font-size: 18px;
+    position: relative;
+  }
+
+  &__icon {
+    background-color: $accentColor;
+    margin: 0 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 10px;
+  }
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: $accentColor;
+  color: #fff;
+  outline: none;
+  margin: 10px auto;
+  display: block;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($accentColor, 5%);
   }
 }

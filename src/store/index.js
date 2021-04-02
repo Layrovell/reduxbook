@@ -4,7 +4,7 @@ import {composeWithDevTools} from "redux-devtools-extension";
 import thunk from "redux-thunk";
 
 export const rootReducer = combineReducers({
-    book: bookReducer,
+    users: bookReducer,
 });
 
 export const store = createStore(

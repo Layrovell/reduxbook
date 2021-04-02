@@ -1,31 +1,41 @@
+import React, {useEffect} from "react";
 import './App.scss';
 import './styles/reset.scss';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-router-dom';
 import {Home} from './components/Home/Home';
 import {Form} from './components/Form/Form';
+import {useDispatch, useSelector} from "react-redux";
+import {fetchUsers, removeUser} from "./store/actions";
 
 function App() {
+    const dispatch = useDispatch();
+    const users = useSelector(state => state.users.items);
+
+    useEffect(() => {
+        dispatch(fetchUsers());
+    }, []);
+
     return (
         <Router>
             <div className='App'>
                 <nav className='nav'>
                     <ul className='nav_list'>
                         <li className='nav_link'>
-                            <Link to='/home'>
-                                <a data-item='Home'>Home</a>
-                            </Link>
+                            <Link to='/home' data-item='Home'>Home</Link>
                         </li>
                         <li className='nav_link'>
-                            <Link to='/form'>
-                                <a data-item='Form' >Form</a>
-                            </Link>
+                            <Link to='/form' data-item='Form'>Form</Link>
                         </li>
                     </ul>
                 </nav>
 
                 <Switch>
-                    <Route path='/home' component={Home}/>
-                    <Route path='/form' component={Form}/>
+                    <Route exact path="/reduxbook" render={() => {
+                        return <Redirect to="/home"/>
+                    }}
+                    />
+                    <Route path='/home' render={() => <Home users={users} /> }/>
+                    <Route path='/form' render={() => <Form /> }/>
                 </Switch>
             </div>
         </Router>
