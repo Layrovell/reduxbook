@@ -1,11 +1,13 @@
 const SET_USERS = 'SET_USERS';
 const SET_IS_FETCHING = 'SET_IS_FETCHING';
 const SET_FETCH_ERR = 'SET_FETCH_ERR';
+const SET_SHOW_ADD_FORM = 'SET_SHOW_ADD_FORM';
 
 const defaultState = {
     items: [],
     isFetching: true,
     isFetchErr: false,
+    isShowAddForm: false,
 }
 
 export default function bookReducer(state = defaultState, action) {
@@ -25,6 +27,11 @@ export default function bookReducer(state = defaultState, action) {
                 ...state,
                 isFetchErr: action.payload,
             }
+        case SET_SHOW_ADD_FORM:
+            return {
+                ...state,
+                isShowAddForm: action.payload,
+            }
         default:
             return state;
     }
@@ -41,6 +48,11 @@ export const setIsFetching = (bool) => ({
 });
 
 export const setFetchErr = (bool) => ({
+    type: SET_FETCH_ERR,
+    payload: bool,
+});
+
+export const setShowAddForm = (bool) => ({
     type: SET_FETCH_ERR,
     payload: bool,
 });
