@@ -5,11 +5,13 @@ import {BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-rout
 import {Home} from './components/Home/Home';
 import {Form} from './components/Form/Form';
 import {useDispatch, useSelector} from "react-redux";
-import {fetchUsers, removeUser} from "./store/actions";
+import {fetchUsers} from "./store/actions";
 
 function App() {
     const dispatch = useDispatch();
     const users = useSelector(state => state.users.items);
+    const isFetching = useSelector(state => state.users.isFetching);
+    const isFetchErr = useSelector(state => state.users.isFetchErr);
 
     useEffect(() => {
         dispatch(fetchUsers());
@@ -34,7 +36,13 @@ function App() {
                         return <Redirect to="/home"/>
                     }}
                     />
-                    <Route path='/home' render={() => <Home users={users} /> }/>
+                    <Route path='/home' render={() =>
+                        <Home
+                            users={users}
+                            isFetching={isFetching}
+                            isFetchErr={isFetchErr}
+                        />
+                    }/>
                     <Route path='/form' render={() => <Form /> }/>
                 </Switch>
             </div>

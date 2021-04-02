@@ -1,16 +1,18 @@
 import axios from "axios";
-import {setUsers} from "./bookReducer";
+import {setUsers, setFetchErr, setIsFetching} from "./bookReducer";
 
 export const fetchUsers = () => {
     return async (dispatch) => {
-        axios.post('http://localhost:8008/api/users/get')
-            .then(response => {
-                const users = response.data;
-                dispatch(setUsers(users))
-            })
-            .catch(error => {
-                const errorMessage = error.message;
-            })
+        try {
+            dispatch(setIsFetching(true))
+            dispatch(setFetchErr(false))
+            const response = await axios.post(`http://localhost:8008/api/users/get`)
+            dispatch(setUsers(response.data))
+        } catch (e) {
+            dispatch(setFetchErr(true))
+        } finally {
+            dispatch(setIsFetching(false))
+        }
     }
 }
 
