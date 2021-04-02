@@ -1,2 +1,2 @@
 
-[DEMO](https://layrovell.github.io/home)
+[DEMO](https://Layrovell.github.io/reduxbook)
