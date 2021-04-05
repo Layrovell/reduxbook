@@ -1,13 +1,14 @@
 const SET_USERS = 'SET_USERS';
 const SET_IS_FETCHING = 'SET_IS_FETCHING';
 const SET_FETCH_ERR = 'SET_FETCH_ERR';
-const SET_SHOW_ADD_FORM = 'SET_SHOW_ADD_FORM';
+const DELETE_USER = 'DELETE_USER';
+const ADD_USER = 'ADD_USER';
+const UPDATE_USER = 'UPDATE_USER';
 
 const defaultState = {
     items: [],
     isFetching: true,
     isFetchErr: false,
-    isShowAddForm: false,
 }
 
 export default function bookReducer(state = defaultState, action) {
@@ -27,10 +28,26 @@ export default function bookReducer(state = defaultState, action) {
                 ...state,
                 isFetchErr: action.payload,
             }
-        case SET_SHOW_ADD_FORM:
+        case DELETE_USER:
             return {
                 ...state,
-                isShowAddForm: action.payload,
+                items: state.items.filter(el => el._id !== action.payload),
+            }
+        case ADD_USER:
+            return {
+                ...state,
+                items: [...state.items, action.payload],
+            }
+        case UPDATE_USER:
+            let newList = state.items.map(user => {
+                if (user._id === action.payload._id) {
+                    return {...action.payload}
+                }
+                return user;
+            });
+            return {
+                ...state,
+                items: newList,
             }
         default:
             return state;
@@ -52,7 +69,17 @@ export const setFetchErr = (bool) => ({
     payload: bool,
 });
 
-export const setShowAddForm = (bool) => ({
-    type: SET_FETCH_ERR,
-    payload: bool,
+export const deleteUser = (id) => ({
+    type: DELETE_USER,
+    payload: id,
+});
+
+export const addUser = (user) => ({
+    type: ADD_USER,
+    payload: user,
+});
+
+export const updateUserInStore = (user) => ({
+    type: UPDATE_USER,
+    payload: user,
 });

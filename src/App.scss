@@ -1,63 +1,59 @@
-//$accentColor: #8254ff;
-$accentColor: #b19f9f;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap');
+$accentColor: #d2bfbf;
 
 .section {
   padding: 20px;
 }
 
-.book {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 10px;
-
-  &__item {
-    outline: 1px dashed lightpink;
-
-    padding: 6px 0 6px 20px;
-    font-size: 18px;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__name {
-    width: 100px;
-  }
-
-  &__name:hover {
-    color: blue;
-  }
+.form__edit {
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 8px;
 }
 
-.btn {
-  padding: 7px 14px;
-  background-color: $accentColor;
-  color: #fff;
-  outline: none;
-  cursor: pointer;
-  width: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &:hover {
-    background-color: darken($accentColor, 5%);
-  }
-}
-
-p {
-  margin: 0;
-}
-
-.link:hover {
-  color: blue;
-}
-
-.details {
-  outline: 1px dashed lightgreen;
+.form__details {
   display: flex;
   justify-content: space-between;
+  padding: 10px;
+}
+
+.input {
+  padding: 10px;
+  width: 90%;
+  border: none;
+  height: 30px;
+  margin: 6px auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 6px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.input::placeholder {
+  color: $accentColor;
+  font-size: 12px;
+}
+
+.input-edit {
+  outline: none;
+  padding: 6px 22px;
+  font-size: 18px;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.input-edit[value] {
+  color: $accentColor;
+}
+
+.form__circle {
+  width: 40px;
+  height: 40px;
+  background-color: $accentColor;
+  border-radius: 100%;
+  opacity: 0.3;
+  margin: 0 4px;
+}
+
+.center {
+  margin: 10px auto;
+  transform: scale(1.3);
 }
