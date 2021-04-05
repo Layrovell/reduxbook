@@ -1,2 +1,2 @@
 
-**[DEMO]**(https://layrovell.github.io/reduxbook/#/)
+**[DEMO](https://layrovell.github.io/reduxbook/#/)**
