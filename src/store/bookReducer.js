@@ -4,11 +4,13 @@ const SET_FETCH_ERR = 'SET_FETCH_ERR';
 const DELETE_USER = 'DELETE_USER';
 const ADD_USER = 'ADD_USER';
 const UPDATE_USER = 'UPDATE_USER';
+const SET_USER = 'SET_USER';
 
 const defaultState = {
     items: [],
     isFetching: true,
     isFetchErr: false,
+    user: '',
 }
 
 export default function bookReducer(state = defaultState, action) {
@@ -49,6 +51,11 @@ export default function bookReducer(state = defaultState, action) {
                 ...state,
                 items: newList,
             }
+        case SET_USER:
+            return {
+                ...state,
+                user: action.payload.item,
+            }
         default:
             return state;
     }
@@ -81,5 +88,10 @@ export const addUser = (user) => ({
 
 export const updateUserInStore = (user) => ({
     type: UPDATE_USER,
+    payload: user,
+});
+
+export const setUser = (user) => ({
+    type: SET_USER,
     payload: user,
 });

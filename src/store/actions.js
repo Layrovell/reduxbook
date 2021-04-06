@@ -1,5 +1,5 @@
 import axios from "axios";
-import {setUsers, setFetchErr, setIsFetching, deleteUser, addUser, updateUserInStore} from "./bookReducer";
+import {setUsers, setFetchErr, setIsFetching, deleteUser, addUser, updateUserInStore, setUser} from "./bookReducer";
 
 export const fetchUsers = () => {
     return async (dispatch) => {
@@ -12,6 +12,21 @@ export const fetchUsers = () => {
             dispatch(setFetchErr(true))
         } finally {
             dispatch(setIsFetching(false))
+        }
+    }
+}
+
+export const getCurrentUser = (id) => {
+    return async (dispatch) => {
+        try {
+            dispatch(setIsFetching(true))
+            dispatch(setFetchErr(false))
+            const response = await axios.get(`http://localhost:8008/api/users/get/${id}`);
+            dispatch(setUser(response.data));
+        } catch (e) {
+            dispatch(setFetchErr(true));
+        } finally {
+            dispatch(setIsFetching(false));
         }
     }
 }

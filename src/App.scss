@@ -7,15 +7,25 @@ $accentColor: #d2bfbf;
 
 .form__edit {
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 8px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.buttons {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
 }
 
 .form__details {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 10px;
 }
 
-.input {
+input {
   padding: 10px;
   width: 90%;
   border: none;
@@ -27,21 +37,9 @@ $accentColor: #d2bfbf;
   font-family: 'Montserrat', sans-serif;
 }
 
-.input::placeholder {
+input::placeholder {
   color: $accentColor;
   font-size: 12px;
-}
-
-.input-edit {
-  outline: none;
-  padding: 6px 22px;
-  font-size: 18px;
-  border: none;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.input-edit[value] {
-  color: $accentColor;
 }
 
 .form__circle {
@@ -53,7 +51,20 @@ $accentColor: #d2bfbf;
   margin: 0 4px;
 }
 
-.center {
-  margin: 10px auto;
-  transform: scale(1.3);
+.btn {
+  padding: 6px;
+  background-color: $accentColor;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  &:hover {
+    background-color: darken($accentColor, 5%);
+  }
 }
