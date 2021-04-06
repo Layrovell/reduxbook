@@ -53,6 +53,7 @@ export const createUser = (name, number) => {
                 body: JSON.stringify({name, number}),
             })
             const newUser = await response.json();
+            console.log(newUser);
             dispatch(addUser(newUser));
         } catch (error) {
             const errorMessage = error.message;

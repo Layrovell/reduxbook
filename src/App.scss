@@ -64,7 +64,15 @@ input::placeholder {
   font-size: 12px;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  &:hover {
-    background-color: darken($accentColor, 5%);
+  &__save {
+    background-color: lightskyblue;
+
+    &:hover {
+      background-color: darken(lightskyblue, 5%);
+    }
+  }
+
+  &__delete {
+    background-color: #ba4b4b;
   }
 }

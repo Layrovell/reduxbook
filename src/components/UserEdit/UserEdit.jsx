@@ -9,7 +9,7 @@ export const UserEdit = (props) => {
     console.log(props);
 
     const {id} = useParams();
-    const user = useSelector(state => state.users.user);
+    const user = useSelector(state => state.users.items.find(el => el._id === id));
 
     const [newName, setNewName] = useState(user.name);
     const [newNumber, setNewNumber] = useState(user.number);

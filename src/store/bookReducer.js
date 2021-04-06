@@ -38,7 +38,7 @@ export default function bookReducer(state = defaultState, action) {
         case ADD_USER:
             return {
                 ...state,
-                items: [...state.items, action.payload],
+                items: [...state.items, action.payload.newItem],
             }
         case UPDATE_USER:
             let newList = state.items.map(user => {
