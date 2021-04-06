@@ -4,10 +4,10 @@ import './styles/reset.scss';
 import {Route} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {createUser, fetchUsers} from "./store/actions";
-import {UserCard} from "./components/userCard/userCard";
 import {Loader} from "./components/Loader/Loader";
-import {AddForm} from "./components/AddForm/AddForm";
+import {UserAddForm} from "./components/Pages/UsersTable/UserAddForm/UserAddForm";
 import {Button} from "./components/Button/Button";
+import {UsersTable} from "./components/Pages/UsersTable/UsersTable";
 
 function App() {
     const [name, setName] = useState('');
@@ -38,7 +38,7 @@ function App() {
                     <Button action={() => setIsOpen(!isOpen)} className='btn btn__new' text='new' />
 
                     {isOpen &&
-                    <AddForm
+                    <UserAddForm
                         name={name}
                         number={number}
                         setName={setName}
@@ -49,14 +49,13 @@ function App() {
 
                     {isFetching
                         ? <Loader/>
-                        : users.map(user =>
-                            <UserCard
-                                user={user} key={user._id}
-                                name={name}
-                                number={number}
-                                setName={setName}
-                                setNumber={setNumber}
-                            />)
+                        : <UsersTable
+                            users={users}
+                            name={name}
+                            number={number}
+                            setName={setName}
+                            setNumber={setNumber}
+                        />
                     }
                 </article>
             </div>

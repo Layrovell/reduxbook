@@ -1,8 +1,8 @@
 import React from 'react';
-import {Input} from "../Input/Input";
-import {Button} from "../Button/Button";
+import {Input} from "../../../Input/Input";
+import {Button} from "../../../Button/Button";
 
-export const AddForm = ({name, number, setName, setNumber, handleSubmit}) => {
+export const UserAddForm = ({name, number, setName, setNumber, handleSubmit}) => {
     return (
         <form onSubmit={handleSubmit}>
             <Input
@@ -17,7 +17,11 @@ export const AddForm = ({name, number, setName, setNumber, handleSubmit}) => {
                 className='input'
                 placeholder='number'
             />
-            <Button className='btn btn__save' type='submit' text='add' />
+            <Button
+                className='btn btn__save'
+                type='submit'
+                text='add'
+            />
         </form>
     );
 };

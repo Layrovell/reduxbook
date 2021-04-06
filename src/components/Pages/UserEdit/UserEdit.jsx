@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {updateUser} from "../../store/actions";
-import {Button} from "../Button/Button";
-import {Input} from "../Input/Input";
+import {updateUser} from "../../../store/actions";
+import {Button} from "../../Button/Button";
+import {Input} from "../../Input/Input";
 
-export const UserDetails = ({user}) => {
+export const UserEdit = ({user}) => {
     const [newNameToSet, setNewNameToSet] = useState(user.name);
     const [newNumberToSet, setNewNumberToSet] = useState(user.number);
     const dispatch = useDispatch();

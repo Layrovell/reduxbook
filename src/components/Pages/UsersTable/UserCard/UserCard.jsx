@@ -1,10 +1,10 @@
 import React from 'react';
 import './UserCard.scss';
 import {Switch, Route, Link} from "react-router-dom";
-import {UserDetails} from "../UserDetails/UserDetails";
+import {UserEdit} from "../../UserEdit/UserEdit";
 import {useDispatch} from "react-redux";
-import {removeUser} from "../../store/actions";
-import {Button} from "../Button/Button";
+import {removeUser} from "../../../../store/actions";
+import {Button} from "../../../Button/Button";
 
 export const UserCard = ({user}) => {
     const dispatch = useDispatch();
@@ -30,7 +30,7 @@ export const UserCard = ({user}) => {
             </Route>
 
             <Route path={`/info/${user._id}`}>
-                <UserDetails user={user} />
+                <UserEdit user={user} />
             </Route>
         </Switch>
     );
