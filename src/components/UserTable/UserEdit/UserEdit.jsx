@@ -1,13 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {getCurrentUser, updateUser} from "../../store/actions";
-import {Loader} from "../Loader/Loader";
+import {getCurrentUser, updateUser} from "../../../store/actions";
+import {Loader} from "../../Loader/Loader";
 
-export const UserEdit = (props) => {
-    // console.log(props.match);
-    console.log(props);
-
+export const UserEdit = () => {
     const {id} = useParams();
     const user = useSelector(state => state.users.items.find(el => el._id === id));
 
@@ -19,12 +16,7 @@ export const UserEdit = (props) => {
 
     useEffect(() => {
         dispatch(getCurrentUser(id));
-        console.log(user);
     }, []);
-
-    useEffect(() => {
-        // console.log(isFetching)
-    }, [isFetching])
 
     const handleChangeSubmit = (e) => {
         e.preventDefault();
@@ -59,7 +51,6 @@ export const UserEdit = (props) => {
                             <button className='btn btn__save'>save</button>
                             <Link to={`/`} className='btn'>back</Link>
                         </div>
-                        {/*<button onClick={() => props.history.goBack()}>back</button>*/}
                     </form>
                 )}
         </>

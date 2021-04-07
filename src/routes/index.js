@@ -1,4 +1,4 @@
-export const routes = {
-  index: '/',
-  editUser: '/user/:id',
+export const routeLinks = {
+    index: '/',
+    editUser: '/user/:id',
 };
