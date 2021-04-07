@@ -15,7 +15,7 @@ export const UserCard = ({user}) => {
                 <div className="book__number">{user.number}</div>
             </div>
             <button onClick={() => dispatch(removeUser(user._id))} className='btn'>delete</button>
-            <Link to={`/user/${user._id}`} className='btn'>edit</Link>
+            <Link to={`/reduxbook/user/${user._id}`} className='btn'>edit</Link>
         </div>
     );
 };

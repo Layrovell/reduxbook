@@ -49,7 +49,7 @@ export const UserEdit = () => {
                             )}
                         <div className="buttons">
                             <button className='btn btn__save'>save</button>
-                            <Link to={`/`} className='btn'>back</Link>
+                            <Link to={`/reduxbook/`} className='btn'>back</Link>
                         </div>
                     </form>
                 )}
