@@ -1,0 +1,9 @@
+.form__add {
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 8px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=UserAddForm.css.map */

@@ -1,5 +1,5 @@
 import React from 'react';
-import {UserCard} from "./UserCard/UserCard";
+import {UserCard} from "../UserCard/UserCard";
 
 export const UsersTable = ({users}) => {
     return (

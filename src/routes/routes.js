@@ -1,12 +1,14 @@
 import React from "react";
 import {Route} from 'react-router';
-import {UserEdit} from "../components/UserTable/UserEdit/UserEdit";
+import {UserEdit} from "../pages/UserEdit/UserEdit";
 import {routeLinks} from './index';
-import App from "../containers/App";
+import App from "../pages/App";
+import {UserAddForm} from "../pages/UserAddForm/UserAddForm";
 
 export const routes = (
-    <div>
+    <>
         <Route exact path={routeLinks.index} component={App}/>
         <Route path={routeLinks.editUser} component={UserEdit}/>
-    </div>
+        <Route path={routeLinks.addUser} component={UserAddForm}/>
+    </>
 )

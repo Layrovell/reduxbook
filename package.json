@@ -1,6 +1,6 @@
 {
-  "homepage": "https://Layrovell.github.io/reduxbook",
-  "name": "reduxbook",
+  "homepage": "https://Layrovell.github.io/book",
+  "name": "book",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

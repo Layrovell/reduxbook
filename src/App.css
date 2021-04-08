@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap');
-$accentColor: #d2bfbf;
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap");
 .section {
   padding: 20px;
 }
@@ -34,18 +32,18 @@ input {
   display: block;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 6px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 input::placeholder {
-  color: $accentColor;
+  color: #d2bfbf;
   font-size: 12px;
 }
 
 .form__circle {
   width: 40px;
   height: 40px;
-  background-color: $accentColor;
+  background-color: #d2bfbf;
   border-radius: 100%;
   opacity: 0.3;
   margin: 0 4px;
@@ -53,7 +51,7 @@ input::placeholder {
 
 .btn {
   padding: 6px;
-  background-color: $accentColor;
+  background-color: #d2bfbf;
   color: #fff;
   outline: none;
   cursor: pointer;
@@ -64,19 +62,19 @@ input::placeholder {
   font-size: 12px;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  &__save {
-    background-color: lightskyblue;
-
-    &:hover {
-      background-color: darken(lightskyblue, 5%);
-    }
-  }
-
-  &__delete {
-    background-color: #ba4b4b;
-  }
+}
+.btn__save {
+  background-color: lightskyblue;
+}
+.btn__save:hover {
+  background-color: #6fc4f9;
+}
+.btn__delete {
+  background-color: #ba4b4b;
 }
 
 .btn-add {
   margin: 0 auto;
 }
+
+/*# sourceMappingURL=App.css.map */

@@ -1,4 +1,5 @@
 export const routeLinks = {
-    index: '/reduxbook',
-    editUser: '/reduxbook/user/:id',
+    index: '/book',
+    editUser: '/book/user/:id',
+    addUser: '/book/add',
 };

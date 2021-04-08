@@ -2,7 +2,7 @@ import React from 'react';
 import './UserCard.scss';
 import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {removeUser} from "../../../store/actions";
+import {removeUser} from "../../store/actions";
 
 export const UserCard = ({user}) => {
     const dispatch = useDispatch();
@@ -15,7 +15,7 @@ export const UserCard = ({user}) => {
                 <div className="book__number">{user.number}</div>
             </div>
             <button onClick={() => dispatch(removeUser(user._id))} className='btn'>delete</button>
-            <Link to={`/reduxbook/user/${user._id}`} className='btn'>edit</Link>
+            <Link to={`/book/user/${user._id}`} className='btn'>edit</Link>
         </div>
     );
 };
